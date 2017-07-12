@@ -1,0 +1,15 @@
+homepage:
+    path:       /
+    defaults:   { _controller: AppBundle:Default:index }
+    
+new:
+    path:       /new
+    defaults:   { _controller: AppBundle:Default:new }
+    
+edit:
+    path:       /new/{id}
+    defaults:   { _controller: AppBundle:Default:new }
+    
+list_data_api:
+    path:       /listData
+    defaults:   { _controller: AppBundle:Default:listDataApi }

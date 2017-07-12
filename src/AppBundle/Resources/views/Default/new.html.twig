@@ -1,0 +1,43 @@
+{% extends "AppBundle::layout.html.twig" %}
+{%block body %}
+<div class="be-content">
+        <div class="page-head">
+          <h2 class="page-head-title">Add Expenses</h2>
+          <ol class="breadcrumb page-head-nav">
+            <li><a href="{{path('homepage')}}">Home</a></li>
+            <li class="active">Add New</li>
+          </ol>
+        </div>
+        <div class="main-content container-fluid">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="panel panel-default panel-border-color panel-border-color-primary">
+                <div class="panel-heading panel-heading-divider">Basic Form<span class="panel-subtitle">This is the default bootstrap form layout</span></div>
+                <div class="panel-body">
+                  <form action="{{expenseObj.id  ? path('edit', {'id':expenseObj.id}) : path('new')}}" method="POST" role="form">
+                    <div class="form-group col-sm-6">
+                      <label>Description</label>
+                      {{form_widget(form.description, {'attr': {'class':'form-control'} })}}
+                      {{ form_errors(form.description) }}
+                    </div>
+                    <div class="form-group col-sm-6">
+                      <label>Series</label>
+                      {{form_widget(form.totalAmount, {'attr': {'class':'form-control'} })}}
+                      {{ form_errors(form.totalAmount) }}
+                    </div>
+                    
+                    {{ form_rest(form) }}
+                      <div class="col-xs-s">
+                        <p class="text-right">                          
+                          <a href="{{path('homepage')}}" class="btn btn-space btn-default">Cancel</a>
+                        </p>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>            
+          </div>
+        </div>
+      </div>
+{% endblock body%}
